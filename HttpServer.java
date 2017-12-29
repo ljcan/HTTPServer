@@ -20,6 +20,7 @@ public class HttpServer {
 	public static int POOL_NUMBER=4;
 	public Charset charset=Charset.forName("GBK");
 	public HttpServer() throws IOException {
+		//Runtime.getRuntime().availableProcessors()获得电脑CPU的核数
 		executorServer=Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*POOL_NUMBER);
 		serverSocketChannel=ServerSocketChannel.open();
 		serverSocketChannel.socket().setReuseAddress(true);
